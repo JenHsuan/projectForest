@@ -1,0 +1,64 @@
+ <!DOCTYPE html>
+ <html>
+  <head>
+    <script src="https://aframe.io/releases/0.6.1/aframe.min.js"></script>
+
+</head>
+<body>
+   <a-scene>
+       <a-box id="box01" color="red" depth="15" height="15" width="15" >
+         <a-animation attribute="rotation" to="360 360 360" direction="alternate" dur="5000"
+                   repeat="indefinite"></a-animation>
+       </a-box>
+       <a-text id="text1" font="kelsonsans" value="Puy de Sancy, France" width="6" ></a-text>
+       <a-box id="box02" color="#6173F4" depth="15" height="15" width="15" >
+         <a-animation attribute="rotation" to="360 360 360" direction="alternate" dur="5000"
+                   repeat="indefinite"></a-animation>
+       </a-box>
+       <a-entity position="0 0 0 " id="c" rotation="0 270 0">
+         <a-light type="point" intensity="2" position="2 4 4"></a-light>
+           <a-camera id="cam">
+             <a-cursor></a-cursor>
+           </a-camera>
+       </a-entity>
+       <a-entity>
+          <a-sky src="https://raw.githubusercontent.com/JenHsuan/test/gh-pages/asset/projectForest_1.jpg" position="0 0 0" id ="sky" radius=500></a-sky>
+       </a-entity>
+     </a-scene>
+     <script>
+      var cam = document.querySelector('#c');
+      var c2 = document.querySelector('#c2');
+      var caja1 = document.querySelector('#box01');
+      var caja2 = document.querySelector('#box02');
+      var caja1Position =  {x: 0, y: 0, z: 0};
+      var caja2Position =  {x: 250, y: 130, z: 0};
+      var caja1Rotation =  {x: 0, y: 270, z: 0};
+      var caja2Rotation =  {x: 0, y: 0, z: 0};
+      cam.setAttribute('rotation' , caja1Rotation);
+      cam.setAttribute('position' , caja1Position);
+      caja1.setAttribute('position' , caja1Position);
+      caja2.setAttribute('position' , caja2Position);
+      
+      caja1.addEventListener('click', function () {
+          document.querySelector('#sky')
+          .setAttribute(
+            'src', 
+            'https://raw.githubusercontent.com/JenHsuan/test/gh-pages/asset/projectForest_1.jpg'
+          );
+          cam.setAttribute('position' , caja1Position);
+          cam.setAttribute('rotation' , caja1Rotation);
+       }); 
+
+      caja2.addEventListener('click', function () {
+          document.querySelector('#sky')
+          .setAttribute(
+            'src', 
+            'https://raw.githubusercontent.com/JenHsuan/test/gh-pages/asset/projectForest_2_.jpg'
+           );
+          cam.setAttribute('position' , caja2Position);
+          cam.setAttribute('rotation' , caja2Rotation);
+       }); 
+
+    </script>
+</body>
+</html>
