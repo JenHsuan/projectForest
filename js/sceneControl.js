@@ -6,7 +6,7 @@ var basicInfo = {
   rotation: []
 };
 for (i = 0; i < boxNumber; ++i) {
-  basicInfo.name.push(document.querySelector('#box0' + (i + 1)).toString());
+  basicInfo.name.push(document.querySelector('#box0' + (i + 1)));
 }
 
 var cam = document.querySelector('#c');
