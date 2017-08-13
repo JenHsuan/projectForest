@@ -1,11 +1,24 @@
+layerNumber = 3;
+boxNumber = layerNumber + 1;
+var basicInfo = {
+  "name": [],
+  "position": [],
+  "rotation": []
+};
+for (i = 0; i < boxNumber; ++i) {
+  basicInfo.name.push(document.querySelector('#box0' + num.toString(i + 1)));
+}
+
 var cam = document.querySelector('#c');
 var c2 = document.querySelector('#c2');
+
 var boxAry = [
-  document.querySelector('#box01'),
-  document.querySelector('#box02'),
-  document.querySelector('#box03'),
-  document.querySelector('#box04')
+  basicInfo.name[0],
+  basicInfo.name[1],
+  basicInfo.name[2],
+  basicInfo.name[3]
 ];
+
 var caja1 = boxAry[0];
 var caja2 = boxAry[1];
 var caja3 = boxAry[2];
