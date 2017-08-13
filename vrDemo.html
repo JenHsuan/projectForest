@@ -14,33 +14,37 @@
     <meta property='og:description' content='This is a demo site for our forest which use webVR (A-Frame) to let people to be personally on the scene'/>
 </head>
 <body>
-   <a-scene>
-       <a-box id="box01" color="red" depth="15" height="15" width="15" >
+  <a-scene>    
+    <a-assets>
+      <img id="skyTexture1" src="https://raw.githubusercontent.com/JenHsuan/projectForest/gh-pages/asset/projectForest_1.jpg">
+      <img id="skyTexture2" src="https://raw.githubusercontent.com/JenHsuan/projectForest/gh-pages/asset/projectForest_2.jpg">
+      <img id="skyTexture3" src="https://raw.githubusercontent.com/JenHsuan/projectForest/gh-pages/asset/projectForest_3_.jpg">
+    </a-assets>
+    <a-box id="box01" color="red" depth="30" height="30" width="30" >
+      <a-animation attribute="rotation" to="360 360 360" direction="alternate" dur="5000"
+                   repeat="indefinite"></a-animation>
+    </a-box> 
+    <a-box id="box02" color="#6173F4" depth="30" height="30" width="30" >
+      <a-animation attribute="rotation" to="360 360 360" direction="alternate" dur="5000"
+                   repeat="indefinite"></a-animation>
+    </a-box>
+    <a-box id="box03" color="green" depth="30" height="30" width="30" >
+       <a-animation attribute="rotation" to="360 360 360" direction="alternate" dur="5000"
+                   repeat="indefinite"></a-animation>
+    </a-box>
+    <a-box id="box04" color="yellow" depth="15" height="15" width="15" >
          <a-animation attribute="rotation" to="360 360 360" direction="alternate" dur="5000"
                    repeat="indefinite"></a-animation>
-       </a-box>
-       <a-text id="text1" font="kelsonsans" value="Puy de Sancy, France" width="6" ></a-text>
-       <a-box id="box02" color="#6173F4" depth="15" height="15" width="15" >
-         <a-animation attribute="rotation" to="360 360 360" direction="alternate" dur="5000"
-                   repeat="indefinite"></a-animation>
-       </a-box>
-       <a-box id="box03" color="green" depth="15" height="15" width="15" >
-         <a-animation attribute="rotation" to="360 360 360" direction="alternate" dur="5000"
-                   repeat="indefinite"></a-animation>
-       </a-box>
-       <a-box id="box04" color="yellow" depth="15" height="15" width="15" >
-         <a-animation attribute="rotation" to="360 360 360" direction="alternate" dur="5000"
-                   repeat="indefinite"></a-animation>
-       </a-box>
-       <a-entity position="0 0 0 " id="c" rotation="0 270 0">
+    </a-box>
+    <a-entity position="0 0 0 " id="c" rotation="0 270 0">
          <a-light type="point" intensity="2" position="2 4 4"></a-light>
            <a-camera id="cam">
              <a-cursor></a-cursor>
            </a-camera>
-       </a-entity>
-       <a-entity>
-          <a-sky src="https://raw.githubusercontent.com/JenHsuan/projectForest/gh-pages/asset/projectForest_1.jpg" position="0 0 0" id ="sky" radius=5000></a-sky>
-       </a-entity>
+     </a-entity>
+     <a-entity>
+          <a-sky src="#skyTexture1" position="0 0 0" id ="sky" radius=5000></a-sky>
+     </a-entity>
      </a-scene>
      <script>
       var cam = document.querySelector('#c');
@@ -62,32 +66,26 @@
       caja2.setAttribute('position' , caja2Position);
       caja3.setAttribute('position' , caja3Position);
       caja4.setAttribute('position' , caja4Position);
-      
       caja1.addEventListener('click', function () {
           document.querySelector('#sky')
           .setAttribute(
-            'src', 
-   'https://raw.githubusercontent.com/JenHsuan/projectForest/gh-pages/asset/projectForest_1.jpg'
+            'src', '#skyTexture1'
           );
           cam.setAttribute('position' , caja1Position);
           cam.setAttribute('rotation' , caja1Rotation);
        }); 
-
       caja2.addEventListener('click', function () {
           document.querySelector('#sky')
           .setAttribute(
-            'src', 
-            'https://raw.githubusercontent.com/JenHsuan/projectForest/gh-pages/asset/projectForest_2.jpg'
+            'src', '#skyTexture2'
            );
           cam.setAttribute('position' , caja2Position);
           cam.setAttribute('rotation' , caja2Rotation);
        });
-       
-caja3.addEventListener('click', function () {
+       caja3.addEventListener('click', function () {
           document.querySelector('#sky')
           .setAttribute(
-            'src', 
-            'https://raw.githubusercontent.com/JenHsuan/projectForest/gh-pages/asset/projectForest_3_.jpg'
+            'src', '#skyTexture3'
            );
           cam.setAttribute('position' , caja3Position);
           cam.setAttribute('rotation' , caja3Rotation);
