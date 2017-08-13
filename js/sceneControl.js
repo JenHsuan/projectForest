@@ -1,9 +1,9 @@
 layerNumber = 3;
 boxNumber = layerNumber + 1;
 var basicInfo = {
-  "name": [],
-  "position": [],
-  "rotation": []
+  name: [],
+  position: [],
+  rotation: []
 };
 for (i = 0; i < boxNumber; ++i) {
   basicInfo.name.push(document.querySelector('#box0' + num.toString(i)));
