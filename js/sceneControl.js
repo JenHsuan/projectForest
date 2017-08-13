@@ -1,9 +1,15 @@
 var cam = document.querySelector('#c');
 var c2 = document.querySelector('#c2');
-var caja1 = document.querySelector('#box01');
-var caja2 = document.querySelector('#box02');
-var caja3 = document.querySelector('#box03');
-var caja4 = document.querySelector('#box04');
+var boxAry = [
+  document.querySelector('#box01'),
+  document.querySelector('#box02'),
+  document.querySelector('#box03'),
+  document.querySelector('#box04')
+];
+var caja1 = boxAry[0];
+var caja2 = boxAry[1];
+var caja3 = boxAry[2];
+var caja4 = boxAry[3];
 var caja1Position = {
   x: 0,
   y: 0,
