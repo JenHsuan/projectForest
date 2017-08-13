@@ -6,10 +6,10 @@
     <meta property='og:type' content='article' />
     <meta property='article:author' content='https://jenhsuan.github.io/Site'/>
     <meta property='og:title' content='[webVR] projectForest' />
-    <meta property='og:url' content='http://blog.twsiyuan.com/example.html'/>
-    <meta property='og:image' content='http://blog.twsiyuan.com/example.jpg'/>
-    <meta property='og:description' content='這是範例的說明'/>
-    <meta property='og:site_name' content='我的網站'/>
+    <meta property='og:url' content='https://jenhsuan.github.io/projectForest/vrDemo.html'/>
+    <meta property='og:image' content='https://github.com/JenHsuan/projectForest/blob/gh-pages/asset/projectForestCover.jpg'/>
+    <meta property='og:description' content='This is a demo site for our forest which use webVR (A-Frame) to let people to be personally on the scene'/>
+    <meta property='og:site _name' content='[webVR] projectForest'/>
 </head>
 <body>
    <a-scene>
@@ -22,6 +22,14 @@
          <a-animation attribute="rotation" to="360 360 360" direction="alternate" dur="5000"
                    repeat="indefinite"></a-animation>
        </a-box>
+       <a-box id="box03" color="green" depth="15" height="15" width="15" >
+         <a-animation attribute="rotation" to="360 360 360" direction="alternate" dur="5000"
+                   repeat="indefinite"></a-animation>
+       </a-box>
+       <a-box id="box04" color="yellow" depth="15" height="15" width="15" >
+         <a-animation attribute="rotation" to="360 360 360" direction="alternate" dur="5000"
+                   repeat="indefinite"></a-animation>
+       </a-box>
        <a-entity position="0 0 0 " id="c" rotation="0 270 0">
          <a-light type="point" intensity="2" position="2 4 4"></a-light>
            <a-camera id="cam">
@@ -29,7 +37,7 @@
            </a-camera>
        </a-entity>
        <a-entity>
-          <a-sky src="https://raw.githubusercontent.com/JenHsuan/test/gh-pages/asset/projectForest_1.jpg" position="0 0 0" id ="sky" radius=500></a-sky>
+          <a-sky src="https://raw.githubusercontent.com/JenHsuan/projectForest/gh-pages/asset/projectForest_1.jpg" position="0 0 0" id ="sky" radius=5000></a-sky>
        </a-entity>
      </a-scene>
      <script>
@@ -37,20 +45,27 @@
       var c2 = document.querySelector('#c2');
       var caja1 = document.querySelector('#box01');
       var caja2 = document.querySelector('#box02');
+      var caja3 = document.querySelector('#box03');
+      var caja4 = document.querySelector('#box04');
       var caja1Position =  {x: 0, y: 0, z: 0};
       var caja2Position =  {x: 250, y: 130, z: 0};
+      var caja3Position =  {x: 500, y: 260, z: -100};
+      var caja4Position =  {x: 750, y: 390, z: -200};
       var caja1Rotation =  {x: 0, y: 270, z: 0};
       var caja2Rotation =  {x: 0, y: 0, z: 0};
+      var caja3Rotation =  {x: 0, y: 0, z: 0};
       cam.setAttribute('rotation' , caja1Rotation);
       cam.setAttribute('position' , caja1Position);
       caja1.setAttribute('position' , caja1Position);
       caja2.setAttribute('position' , caja2Position);
+      caja3.setAttribute('position' , caja3Position);
+      caja4.setAttribute('position' , caja4Position);
       
       caja1.addEventListener('click', function () {
           document.querySelector('#sky')
           .setAttribute(
             'src', 
-            'https://raw.githubusercontent.com/JenHsuan/test/gh-pages/asset/projectForest_1.jpg'
+   'https://raw.githubusercontent.com/JenHsuan/projectForest/gh-pages/asset/projectForest_1.jpg'
           );
           cam.setAttribute('position' , caja1Position);
           cam.setAttribute('rotation' , caja1Rotation);
@@ -60,12 +75,21 @@
           document.querySelector('#sky')
           .setAttribute(
             'src', 
-            'https://raw.githubusercontent.com/JenHsuan/test/gh-pages/asset/projectForest_2_.jpg'
+            'https://raw.githubusercontent.com/JenHsuan/projectForest/gh-pages/asset/projectForest_2.jpg'
            );
           cam.setAttribute('position' , caja2Position);
           cam.setAttribute('rotation' , caja2Rotation);
-       }); 
-
+       });
+       
+caja3.addEventListener('click', function () {
+          document.querySelector('#sky')
+          .setAttribute(
+            'src', 
+            'https://raw.githubusercontent.com/JenHsuan/projectForest/gh-pages/asset/projectForest_3_.jpg'
+           );
+          cam.setAttribute('position' , caja3Position);
+          cam.setAttribute('rotation' , caja3Rotation);
+       });
     </script>
 </body>
 </html>
