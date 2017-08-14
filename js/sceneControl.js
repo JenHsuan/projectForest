@@ -1,4 +1,4 @@
-layerNumber = 3;
+layerNumber = 4;
 boxNumber = layerNumber + 1;
 
 
@@ -20,8 +20,16 @@ var basicInfo = {
     x: 750,
     y: 390,
     z: -200
+  }, {
+    x: 600,
+    y: 260,
+    z: -400
   }],
   rotation: [{
+    x: 0,
+    y: 270,
+    z: 0
+  }, {
     x: 0,
     y: 270,
     z: 0
@@ -48,10 +56,11 @@ cam.setAttribute('position', basicInfo.position[0]);
 for (i = 0; i < boxNumber; ++i) {
   basicInfo.boxObj.push(document.querySelector('#box0' + (i + 1)));
   basicInfo.boxObj[i].setAttribute('position', basicInfo.position[i]);
-  basicInfo.boxObj[i].addEventListener('click', clickListener(i));
+  basicInfo.boxObj[i].addEventListener('click', addClickListener(i));
 }
 
-function clickListener(i) {
+
+function addClickListener(i) {
   return function() {
     document.querySelector('#sky')
       .setAttribute(
