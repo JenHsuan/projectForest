@@ -1,4 +1,4 @@
-layerNumber = 4;
+layerNumber = 5;
 boxNumber = layerNumber + 1;
 
 
@@ -24,6 +24,10 @@ var basicInfo = {
     x: 600,
     y: 260,
     z: -400
+  }, {
+    x: 1200,
+    y: 300,
+    z: 400
   }],
   rotation: [{
     x: 0,
@@ -44,6 +48,10 @@ var basicInfo = {
   }, {
     x: 0,
     y: 270,
+    z: 0
+  }, {
+    x: 0,
+    y: 180,
     z: 0
   }]
 };

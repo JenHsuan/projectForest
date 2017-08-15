@@ -1,59 +1,60 @@
- <!DOCTYPE html>
- <html xmlns:og='http://ogp.me/ns#'>
-  <head>
+<!DOCTYPE html>
+<html xmlns:og='http://ogp.me/ns#'>
+
+<head>
     <script src="https://aframe.io/releases/0.6.1/aframe.min.js"></script>
     <title>[webVR] projectForest</title>
     <link rel="shortcut icon" href="https://raw.githubusercontent.com/JenHsuan/projectForest/gh-pages/asset/logo.ico">
     <meta property='og:type' content='article' />
     <meta property='og:title' content='[webVR] projectForest' />
-    <meta property='og:url' content='https://jenhsuan.github.io/projectForest/vrDemo.html'/>
-    <meta property='og:image:url' content='https://raw.githubusercontent.com/JenHsuan/projectForest/gh-pages/asset/projectForestCover.jpg'/>
-    <meta property='og:image:secure_url' content='https://raw.githubusercontent.com/JenHsuan/projectForest/gh-pages/asset/projectForestCover.jpg'/>
-    <meta property="og:image:type" content="image/jpeg" /> 
-    <meta property="og:image:width" content="800" /> 
+    <meta property='og:url' content='https://jenhsuan.github.io/projectForest/vrDemo.html' />
+    <meta property='og:image:url' content='https://raw.githubusercontent.com/JenHsuan/projectForest/gh-pages/asset/projectForestCover.jpg' />
+    <meta property='og:image:secure_url' content='https://raw.githubusercontent.com/JenHsuan/projectForest/gh-pages/asset/projectForestCover.jpg' />
+    <meta property="og:image:type" content="image/jpeg" />
+    <meta property="og:image:width" content="800" />
     <meta property="og:image:height" content="413" />
-    <meta property='og:description' content='This is a demo site for our forest which use webVR (A-Frame) to let people to be personally on the scene'/>
+    <meta property='og:description' content='This is a demo site for our forest which use webVR (A-Frame) to let people to be personally on the scene' />
 </head>
+
 <body>
-  <a-scene>    
-  <a-assets>
-    <img id="skyTexture1" src="https://raw.githubusercontent.com/JenHsuan/projectForest/gh-pages/asset/projectForest_1.jpg">
-    <img id="skyTexture2" src="https://raw.githubusercontent.com/JenHsuan/projectForest/gh-pages/asset/projectForest_2.jpg">
-    <img id="skyTexture3" src="https://raw.githubusercontent.com/JenHsuan/projectForest/gh-pages/asset/projectForest_3_.jpg">
-    <img id="skyTexture4" src="https://raw.githubusercontent.com/JenHsuan/projectForest/gh-pages/asset/projectForest_6.jpg">
-    <img id="skyTexture5" src="https://raw.githubusercontent.com/JenHsuan/projectForest/gh-pages/asset/projectForest_5.jpg">
-  </a-assets>
-       <a-box id="box01" color="red" depth="30" height="30" width="30" >
-         <a-animation attribute="rotation" to="360 360 360" direction="alternate" dur="5000"
-                   repeat="indefinite"></a-animation>
-       </a-box>
-     
-       <a-box id="box02" color="#6173F4" depth="30" height="30" width="30" >
-         <a-animation attribute="rotation" to="360 360 360" direction="alternate" dur="5000"
-                   repeat="indefinite"></a-animation>
-       </a-box>
-       <a-box id="box03" color="green" depth="30" height="30" width="30" >
-         <a-animation attribute="rotation" to="360 360 360" direction="alternate" dur="5000"
-                   repeat="indefinite"></a-animation>
-       </a-box>
-       <a-box id="box04" color="yellow" depth="15" height="15" width="15" >
-         <a-animation attribute="rotation" to="360 360 360" direction="alternate" dur="5000"
-                   repeat="indefinite"></a-animation>
-       </a-box>
-       <a-box id="box05" color="gray" depth="15" height="15" width="15" >
-         <a-animation attribute="rotation" to="360 360 360" direction="alternate" dur="5000"
-                   repeat="indefinite"></a-animation>
-       </a-box>
-       <a-entity position="0 0 0 " id="c" rotation="0 270 0">
-         <a-light type="point" intensity="2" position="2 4 4"></a-light>
-           <a-camera id="cam">
-             <a-cursor></a-cursor>
-           </a-camera>
-       </a-entity>
-       <a-entity>
-          <a-sky src="#skyTexture1" position="0 0 0" id ="sky" radius=5000></a-sky>
-       </a-entity>
-     </a-scene>
-  <script src = "./js/sceneControl.js"></script>
+    <a-scene>
+        <a-assets>
+            <img id="skyTexture1" src="https://raw.githubusercontent.com/JenHsuan/projectForest/gh-pages/asset/projectForest_1.jpg">
+            <img id="skyTexture2" src="https://raw.githubusercontent.com/JenHsuan/projectForest/gh-pages/asset/projectForest_2.jpg">
+            <img id="skyTexture3" src="https://raw.githubusercontent.com/JenHsuan/projectForest/gh-pages/asset/projectForest_3_.jpg">
+            <img id="skyTexture4" src="https://raw.githubusercontent.com/JenHsuan/projectForest/gh-pages/asset/projectForest_6.jpg">
+            <img id="skyTexture5" src="https://raw.githubusercontent.com/JenHsuan/projectForest/gh-pages/asset/projectForest_5.jpg">
+            <img id="skyTexture6" src="https://raw.githubusercontent.com/JenHsuan/projectForest/gh-pages/asset/projectForest_7_.jpg">
+        </a-assets>
+        <a-box id="box01" color="red" depth="30" height="30" width="30">
+            <a-animation attribute="rotation" to="360 360 360" direction="alternate" dur="5000" repeat="indefinite"></a-animation>
+        </a-box>
+        <a-box id="box02" color="#6173F4" depth="30" height="30" width="30">
+            <a-animation attribute="rotation" to="360 360 360" direction="alternate" dur="5000" repeat="indefinite"></a-animation>
+        </a-box>
+        <a-box id="box03" color="green" depth="30" height="30" width="30">
+            <a-animation attribute="rotation" to="360 360 360" direction="alternate" dur="5000" repeat="indefinite"></a-animation>
+        </a-box>
+        <a-box id="box04" color="yellow" depth="15" height="15" width="15">
+            <a-animation attribute="rotation" to="360 360 360" direction="alternate" dur="5000" repeat="indefinite"></a-animation>
+        </a-box>
+        <a-box id="box05" color="gray" depth="15" height="15" width="15">
+            <a-animation attribute="rotation" to="360 360 360" direction="alternate" dur="5000" repeat="indefinite"></a-animation>
+        </a-box>
+        <a-box id="box06" color="purple" depth="15" height="15" width="15">
+            <a-animation attribute="rotation" to="360 360 360" direction="alternate" dur="5000" repeat="indefinite"></a-animation>
+        </a-box>
+        <a-entity position="0 0 0 " id="c" rotation="0 270 0">
+            <a-light type="point" intensity="2" position="2 4 4"></a-light>
+            <a-camera id="cam">
+                <a-cursor></a-cursor>
+            </a-camera>
+        </a-entity>
+        <a-entity>
+            <a-sky src="#skyTexture1" position="0 0 0" id="sky"></a-sky>
+        </a-entity>
+    </a-scene>
+    <script src="./js/sceneControl.js"></script>
 </body>
+
 </html>
