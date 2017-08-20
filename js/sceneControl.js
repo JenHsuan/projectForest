@@ -62,12 +62,11 @@ cam.setAttribute('rotation', basicInfo.rotation[0]);
 cam.setAttribute('position', basicInfo.position[0]);
 
 camId.addEventListener('componentchanged', function(evt) {
-  console.log(evt.detail);
-  console.log("name: " + String(evt.detail.name));
-  console.log(typeof(evt));
-  console.log(evt.detail.newData);
-  if (evt.detail.state === 'selected') {
-    console.log('Entity now selected!');
+  if (evt.detail.name === 'rotation') {
+    console.log(evt.detail);
+    console.log(evt.detail.newData.x - evt.detail.oldData.x);
+    console.log(evt.detail.newData.y - evt.detail.oldData.y);
+    console.log(evt.detail.newData.z - evt.detail.oldData.z);
   }
 });
 
