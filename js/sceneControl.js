@@ -57,9 +57,18 @@ var basicInfo = {
 };
 
 var cam = document.querySelector('#c');
-var c2 = document.querySelector('#c2');
+var camId = document.querySelector('#cam');
 cam.setAttribute('rotation', basicInfo.rotation[0]);
 cam.setAttribute('position', basicInfo.position[0]);
+
+camId.addEventListener('componentchanged', function(evt) {
+  console.log(evt.detail);
+  console.log(evt.name);
+  if (evt.detail.state === 'selected') {
+    console.log('Entity now selected!');
+  }
+});
+
 
 for (i = 0; i < boxNumber; ++i) {
   basicInfo.boxObj.push(document.querySelector('#box0' + (i + 1)));
