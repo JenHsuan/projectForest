@@ -64,9 +64,9 @@ cam.setAttribute('position', basicInfo.position[0]);
 camId.addEventListener('componentchanged', function(evt) {
   if (evt.detail.name === 'rotation') {
     console.log(evt.detail);
-    console.log(evt.detail.newData.x - evt.detail.oldData.x);
-    console.log(evt.detail.newData.y - evt.detail.oldData.y);
-    console.log(evt.detail.newData.z - evt.detail.oldData.z);
+    console.log((evt.detail.newData.x - evt.detail.oldData.x) / Math.PI * 180);
+    console.log((evt.detail.newData.y - evt.detail.oldData.y) / Math.PI * 180);
+    console.log((evt.detail.newData.z - evt.detail.oldData.z) / Math.PI * 180);
   }
 });
 
