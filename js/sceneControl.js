@@ -63,7 +63,7 @@ cam.setAttribute('position', basicInfo.position[0]);
 
 camId.addEventListener('componentchanged', function(evt) {
   console.log(evt.detail);
-  console.log(evt.detail.name);
+  console.log("name: " + String(evt.detail.name));
   console.log(typeof(evt));
   console.log(evt.detail.newData);
   if (evt.detail.state === 'selected') {
