@@ -65,6 +65,7 @@ camId.addEventListener('componentchanged', function(evt) {
   console.log(evt.detail);
   console.log(evt.name);
   console.log(typeof(evt));
+  console.log(evt.newData);
   if (evt.detail.state === 'selected') {
     console.log('Entity now selected!');
   }
