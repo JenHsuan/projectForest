@@ -51,7 +51,7 @@ var basicInfo = {
     z: 0
   }, {
     x: 0,
-    y: 180,
+    y: 270,
     z: 0
   }]
 };
@@ -61,12 +61,28 @@ var camId = document.querySelector('#cam');
 cam.setAttribute('rotation', basicInfo.rotation[0]);
 cam.setAttribute('position', basicInfo.position[0]);
 
+var p = document.querySelector('#plane');
+var angle = 0;
+var radius = 14;
+
 camId.addEventListener('componentchanged', function(evt) {
-  if (evt.detail.name === 'rotation') {
-    console.log(evt.detail);
-    console.log(evt.detail.newData.x);
-    console.log(evt.detail.newData.y);
-    console.log(evt.detail.newData.z);
+  console.log(evt.detail.newData.x);
+  console.log(evt.detail.newData.y);
+  zAngle = evt.detail.newData.x;
+  angle = evt.detail.newData.y;
+  var cameraPosition = cam.getAttribute('position');
+  p.setAttribute('rotation', {
+    x: -90,
+    y: 0,
+    z: angle
+  });
+  p.setAttribute('position', {
+    x: cameraPosition.x + radius * Math.cos(angle / 180 * Math.PI),
+    y: cameraPosition.y - radius * Math.sin((zAngle + 30) / 180 * Math.PI),
+    z: cameraPosition.z - radius * Math.sin(angle / 180 * Math.PI)
+  });
+  if (evt.detail.state === 'selected') {
+    console.log('Entity now selected!');
   }
 });
 
@@ -77,7 +93,6 @@ for (i = 0; i < boxNumber; ++i) {
   basicInfo.boxObj[i].addEventListener('click', addClickListener(i));
 }
 
-
 function addClickListener(i) {
   return function() {
     document.querySelector('#sky')
@@ -86,5 +101,6 @@ function addClickListener(i) {
       );
     cam.setAttribute('position', basicInfo.position[i]);
     cam.setAttribute('rotation', basicInfo.rotation[i]);
+    basicInfo.boxObj[i].setAttribute('width', 30);
   };
 }
