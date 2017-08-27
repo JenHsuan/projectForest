@@ -65,8 +65,6 @@ var angle = 0;
 var radius = 15;
 
 camId.addEventListener('componentchanged', function(evt) {
-  console.log(evt.detail.newData.x);
-  console.log(evt.detail.newData.y);
   zAngle = evt.detail.newData.x;
   angle = evt.detail.newData.y;
   var cameraPosition = cam.getAttribute('position');
