@@ -61,7 +61,6 @@ var camId = document.querySelector('#cam');
 cam.setAttribute('rotation', basicInfo.rotation[0]);
 cam.setAttribute('position', basicInfo.position[0]);
 
-var p = document.querySelector('#plane');
 var angle = 0;
 var radius = 15;
 
@@ -71,6 +70,7 @@ camId.addEventListener('componentchanged', function(evt) {
   zAngle = evt.detail.newData.x;
   angle = evt.detail.newData.y;
   var cameraPosition = cam.getAttribute('position');
+  var p = document.querySelector('#plane');
   p.setAttribute('rotation', {
     x: -90,
     y: 0,
