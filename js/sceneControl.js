@@ -65,8 +65,8 @@ var angle = 0;
 var radius = 15;
 
 camId.addEventListener('componentchanged', function(evt) {
-  zAngle = evt.detail.newData.x;
-  angle = evt.detail.newData.y;
+  var zAngle = evt.detail.newData.x;
+  var angle = evt.detail.newData.y;
   var cameraPosition = cam.getAttribute('position');
   var p = document.querySelector('#plane');
   p.setAttribute('rotation', {
