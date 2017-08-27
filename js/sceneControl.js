@@ -63,7 +63,7 @@ cam.setAttribute('position', basicInfo.position[0]);
 
 var p = document.querySelector('#plane');
 var angle = 0;
-var radius = 14;
+var radius = 15;
 
 camId.addEventListener('componentchanged', function(evt) {
   console.log(evt.detail.newData.x);
@@ -78,12 +78,9 @@ camId.addEventListener('componentchanged', function(evt) {
   });
   p.setAttribute('position', {
     x: cameraPosition.x + radius * Math.cos(angle / 180 * Math.PI),
-    y: cameraPosition.y - radius * Math.sin((zAngle + 30) / 180 * Math.PI),
+    y: cameraPosition.y - radius * Math.sin((zAngle + 45) / 180 * Math.PI),
     z: cameraPosition.z - radius * Math.sin(angle / 180 * Math.PI)
   });
-  if (evt.detail.state === 'selected') {
-    console.log('Entity now selected!');
-  }
 });
 
 
@@ -98,6 +95,10 @@ function addClickListener(i) {
     document.querySelector('#sky')
       .setAttribute(
         'src', '#skyTexture' + (i + 1)
+      );
+    document.querySelector('#plane')
+      .setAttribute(
+        'src', '#map' + (i + 1)
       );
     cam.setAttribute('position', basicInfo.position[i]);
     cam.setAttribute('rotation', basicInfo.rotation[i]);
